@@ -16,6 +16,10 @@ import BoardWrapper from "./components/BoardWrapper.vue";
 <style scoped>
 h1 {
   text-align: center;
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 h2 {
   text-align: center;

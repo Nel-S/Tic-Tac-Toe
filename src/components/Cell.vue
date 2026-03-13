@@ -1,25 +1,12 @@
 <script>
 // Should this even be a component, considering it has no data itself and solely performs emissions?
 export default {
-	// data() {
-	// 	return {
-	// 		// claimedBy: null,
-	// 		disable: false
-	// 	}
-	// },
 	props: {
 		row: Number,
 		column: Number,
 		disable: Boolean
 	},
 	emits: ["hasBeenSelected"],
-	// None of the props seem to actually update unless I add watchers for them.
-	watch: {
-		disable(newDisableSetting) {
-
-		}
-	},
-
 	methods: {
 		claim() {
 			// this.disable = true;

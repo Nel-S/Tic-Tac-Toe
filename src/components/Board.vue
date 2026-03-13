@@ -112,7 +112,7 @@ export default {
 			for (let row = 0; row < rows; ++row) {
 				const newArray = []
 				for (let column = 0; column < columns; ++column) {
-					newArray.push({id: id++, claimedBy: "​"}) // HACK because buttons deflate otherwise
+					newArray.push({id: id++, claimedBy: ""})
 				}
 				this.cells.push(newArray)
 			}
@@ -128,10 +128,14 @@ export default {
 <template>
 	<!-- It might be wise to use a table instead, to avoid wrapping issues. -->
 	 <!-- The players = 53 easter egg also breaks the grid. -->
-	<div v-for="(row, rowIndex) in this.cells">
+	<div v-for="(row, rowIndex) in this.cells" class="boardClass">
 		<Cell v-for="(cell, cellIndex) in row" :disable="cell.disable" :row="rowIndex" :column="cellIndex" @hasBeenSelected="(cellCoordinates) => determineAction(cellCoordinates)" >{{ cell.claimedBy }}</Cell>
 	</div>
 </template>
 
 <style scoped>
+.boardClass {
+	display: flex;
+	justify-content: center;
+}
 </style>
